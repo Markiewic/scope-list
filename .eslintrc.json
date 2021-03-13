@@ -1,0 +1,4 @@
+{
+    "extends": ["@angular-ru/eslint-config"],
+    "ignorePatterns": ["**/*/lib/*"]
+}

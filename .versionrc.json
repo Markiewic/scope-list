@@ -1,0 +1,3 @@
+{
+    "releaseCommitMessageFormat": "ci(common): update version to {{currentTag}} [ci skip]"
+}
