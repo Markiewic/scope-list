@@ -35,7 +35,7 @@ jobs:
             -   name: Bump version & publish to npm
                 if: contains('refs/heads/main', github.ref)
                 run: |
-                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .yarnrc
+                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
                     yarn release
             -   name: Push
                 if: contains('refs/heads/main', github.ref)
