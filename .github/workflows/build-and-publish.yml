@@ -28,13 +28,13 @@ jobs:
             -   name: Build
                 run: yarn build
             -   name: Bump version & publish to npm
-                if: contains('refs/heads/master', github.ref)
+                if: contains('refs/heads/main', github.ref)
                 run: |
                     echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
                     yarn release
                     yarn publish
             -   name: Push
-                if: contains('refs/heads/master', github.ref)
+                if: contains('refs/heads/main', github.ref)
                 uses: ad-m/github-push-action@master
                 with:
                     github_token: ${{ secrets.GITHUB_TOKEN }}
