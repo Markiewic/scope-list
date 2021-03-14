@@ -19,8 +19,8 @@ jobs:
                 uses: actions/checkout@v2
             -   name: Setup git user
                 run: |
-                    git config --global user.email "you@example.com"
-                    git config --global user.name "Your Name"
+                    git config --global user.email "a.khod@bk.ru"
+                    git config --global user.name "Schirbak"
             -   name: Use Node.js ${{ matrix.node-version }}
                 uses: actions/setup-node@v1
                 with:
@@ -34,7 +34,7 @@ jobs:
             -   name: Bump version & publish to npm
                 if: contains('refs/heads/main', github.ref)
                 run: |
-                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
                     yarn release
             -   name: Push
                 if: contains('refs/heads/main', github.ref)
