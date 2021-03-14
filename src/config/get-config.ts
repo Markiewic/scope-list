@@ -10,5 +10,3 @@ export function getConfig(): Config {
     assertConfig(config);
     return config;
 }
-
-// sdfsdf
