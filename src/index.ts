@@ -10,7 +10,7 @@ import { readInput } from './utils/read-input';
 
 // eslint-disable-next-line no-console
 scopeList().then(console.log);
-
+// asdf
 async function scopeList(): Promise<string> {
     const options: Options = readOptions();
     const config: Config = getConfig();
