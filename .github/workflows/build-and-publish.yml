@@ -32,16 +32,16 @@ jobs:
                 run: yarn lint:check
             -   name: Build
                 run: yarn build
-            -   name: Bump version & publish to npm
+            -   name: Bump version
                 if: contains('refs/heads/main', github.ref)
-                run: |
-                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-                    yarn release
+                run: yarn release
             -   name: Push
                 if: contains('refs/heads/main', github.ref)
                 run: git push --follow-tags origin ${{ github.ref }}
             -   name: Publish
                 if: contains('refs/heads/main', github.ref)
-                run: yarn publish
                 env:
                     NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+                run: |
+                    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+                    yarn publish
