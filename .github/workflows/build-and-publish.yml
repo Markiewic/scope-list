@@ -44,4 +44,4 @@ jobs:
                 if: contains('refs/heads/main', github.ref)
                 run: yarn publish
                 env:
-                    NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+                    NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
